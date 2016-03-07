@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Template</title>
+    </head>
+    <body>
+    <script id="someTemplate" type="test/template">
+        <h1> {{name}} </h1>
+        <p>  {{desc}} </p>
+    </script>
+
+
+
+    <script src="../include/lib/jquery-1.12.1.js">
+    </script>
+        <script>
+            (function(){
+                var content = [
+                    {
+                        name : 'SomeName1',
+                        Desc : 'Desc1'
+                    },
+                    {
+                        name : 'SomeName2',
+                        Desc : 'Desc2'
+                    },
+                    {
+                        name : 'SomeName3',
+                        Desc : 'Desc3'
+                    }
+                ],
+                template = $.trim($('#someTemplate').html());
+            $.each( content, function( index, obj ){
+                var temp =
+                    template.replace ( /{{name}}/ig, obj.name)
+                            .replace( /{{desc}}/ig, obj.Desc);
+
+                    $(document. body).append(temp);
+
+            });
+
+            }
+
+            )();
+        </script>
+
+
+
+    </body>
+</html>

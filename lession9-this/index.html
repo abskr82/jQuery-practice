@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+    <a href="#">Click me</a>
+
+
+    <script src="../include/lib/jquery-1.12.1.js">
+    </script>
+    <script>
+        function doSome(e){
+            // console.log(e);
+            console.log(this);
+        }
+        var obj = {
+            doIt : function(e){
+                console.log(this);
+               e.preventDefault();
+            }
+        }
+        // $("a").on('click',doSome);
+        // $("a").on('click',function(e){
+        //     // here this is anchor which is clicked
+        //     obj.doIt.call(this);
+        //     e.preventDefault();
+        // });
+
+        // here this would refer to anchor tag
+        // $("a").on('click', obj.doIt);
+
+        // this case "this" will refer obj
+        $("a").on('click', $.proxy(obj.doIt, obj));
+
+    </script>
+    </body>
+</html>

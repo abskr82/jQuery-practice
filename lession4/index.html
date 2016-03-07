@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery</title>
+        <link rel="stylesheet" href="css/day.css">
+    </head>
+    <body>
+    <button type="button" name="button1" data-file='day'>btn1</button>
+    <button type="button" name="button2" data-file='night'>btn2</button>
+    <script src="../include/lib/jquery-1.12.1.js">
+    </script>
+
+    <script>
+    (function(){
+        $("button").on('click',function(){
+            // $(this).text("sndnj");
+            var link = $('link');
+            // var stylesheet = $(this).attr('data-file');
+            var stylesheet = $(this).data('file');
+
+            $('link').attr('href','css/'+ stylesheet + '.css');
+            $this = $(this);
+            $this.siblings('button')
+                .removeAttr('disabled')
+                .end()
+                .attr('disabled','disabled');
+        }) ;
+    }
+    )();
+
+    </script>
+    </body>
+</html>

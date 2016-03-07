@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hover events</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <dl>
+            <dt>Some stuff here </dt>
+            <dd>Some description</dd>
+            <dt>Some stuff here </dt>
+            <dd>Some description</dd>
+            <dt>Some stuff here </dt>
+            <dd>Some description</dd>
+
+        </dl>
+    <script src="../include/lib/jquery-1.12.1.js">
+    </script>
+    <script>
+
+        $('dd').filter(":nth-child(n+4)").addClass('hide');
+        $('dl').on('mouseenter','dt', function(){
+            $(this)
+                .next()
+                    .slideDown(200)
+                    .siblings('dd')
+                        .slideUp('200');
+        });
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Infinite rotate</title>
+        <style>
+            h1{
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1> Hello There  ! i will rotate !!</h1>
+
+
+    <script src="../include/lib/jquery-1.12.1.js">
+    </script>
+    <script>
+
+        function rt(a,b){
+            var a =1;
+            setTimeout(function(){
+                if ( a == 1 ){
+                    rt();
+                }
+            },1000)
+            var h1Var = $("h1");
+            $({range:0}).animate({range:360},
+            {
+                duration: 1000,
+                step: function(a){
+                    h1Var.css({
+                        'transform' : 'rotate('+ a +'deg)'
+                    });
+                }
+            });
+        }
+        rt("a","b");
+
+    </script>
+    </body>
+</html>

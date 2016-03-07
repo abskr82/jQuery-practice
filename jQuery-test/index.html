@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>D3-Chart</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src='http://d3js.org/d3.v3.min.js'></script>
+  <!--toolTip-->
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/createTable.js"></script>
+  <!-- <script>
+      function alert1(){
+          alert("me");
+      }
+  </script> -->
+  <script src="../include/lib/jquery-1.12.1.js">
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload='drawBarChart("jsonOutput/prob1-1.json","Arable land (% of land area)","#tab11",100);
+drawBarChart("jsonOutput/prob1-2.json","Arable land (hectares per person)","#tab21",100);
+drawBarChart("jsonOutput/prob1-3.json","Arable land (hectares)","#tab31",100);
+drawBarChart("jsonOutput/prob1-4.json","Arable land (% of land area):African","#tab41",100);
+drawLineChart("jsonOutput/prob-5.json","#visualisation");'>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">D3-Chart</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Info</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+		<div class="row" id="moreInfo">
+			<div class="col-sm-12">
+				<h3>World Development Indicators - Arable land</h3>
+				<div class="tabbable">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#tab1" data-toggle="tab">Arable land (% of land area)</a></li>
+						<li><a href="#tab2" data-toggle="tab">Arable land (hectares per person)</a></li>
+                        <li><a href="#tab3" data-toggle="tab">Arable land (hectares)</a></li>
+                        <li><a href="#tab4" data-toggle="tab">Arable land (% of land area) for African countries 2010</a></li>
+						<li><a href="#tab5" data-toggle="tab">Arable land (hectares) Continent</a></li>
+					</ul>
+                    <div class="container">
+
+
+    					<div class="tab-content">
+    						<div class="tab-pane active" id="tab1">
+    							<br/><br/><br/>
+                                <div class="row">
+                                    <div class="col-sm-10 chart" id="tab11">
+
+                                    </div>
+                                    <div class="col-sm-2" id="tableDiv">
+
+
+                                    </div>
+                                </div>
+    						</div><!-- first tab pan end-->
+    						<div class="tab-pane" id="tab2" class="chart">
+    							<br/><br/><br/>
+                                <div class="row">
+                                    <div class="col-sm-10 chart" id="tab21">
+
+                                    </div>
+                                    <div class="col-sm-2" id="tableDiv1">
+
+
+                                    </div>
+                                </div>
+    						</div><!--second tab pan end-->
+                            <div class="tab-pane" id="tab3" class="chart">
+    							<br/><br/><br/>
+                                <div class="row">
+                                    <div class="col-sm-10 chart" id="tab31">
+
+                                    </div>
+                                    <div class="col-sm-2" id="tableDiv2">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab4" class="chart">
+    							<br/><br/><br/>
+                                <div class="row">
+                                    <div class="col-sm-10 chart" id="tab41">
+
+                                    </div>
+                                    <div class="col-sm-2" id="tableDiv3">
+
+
+                                    </div>
+                                </div>
+                            </div>
+    						<div class="tab-pane" id="tab5">
+                                <svg id="visualisation" width="1000" height="500"></svg>
+                            </div>
+    					</div><!--end tab content-->
+                    </div>
+				</div><!--end tabbable-->
+			</div><!--end col 12-->
+		</div><!-- end moreInfo-->
+	</div><!--end container-->
+
+</body>
+</html>

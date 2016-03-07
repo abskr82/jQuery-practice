@@ -1,0 +1,9 @@
+dt{
+    background: red;
+}
+dd{
+    background: green;
+}
+.hide{
+    display: none;
+}

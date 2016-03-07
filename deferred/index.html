@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+
+
+        <script src="../include/lib/jquery-1.12.1.js">
+        </script>
+        <script>
+            var myVal;
+            var setVal = function(){
+                var deferred = $.Deferred();
+                setTimeout(function(){
+                    myVal = "My value";
+                    deferred.resolve();  // success case
+                    // deferred.reject(); // failure case
+                },2000);
+                return deferred.promise();
+            }
+            // setVal().always(function(){
+            setVal().done(function(){
+                console.log("All done hhh: " + myVal);
+            }).fail(function(){
+                console.log("failed");
+            });
+
+            //  this way also we can call the function
+            // first function is for done
+            // next for fail , if only one function then its for done
+            setVal().then(
+                function(){
+                    console.log("All done hhh: " + myVal);
+                },
+                function(){
+                    console.log('failed');
+                }
+            );
+        </script>
+    </body>
+</html>

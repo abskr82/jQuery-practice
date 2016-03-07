@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+
+
+        <script src="../include/lib/jquery-1.12.1.js">
+        </script>
+        <script>
+            $.searchTwitter = function( search ){
+                var dfd = $.Deferred();
+                $.ajax({
+                    url : 'http://search.twitter.com/search.json',
+                    data : { q: search},
+                    // dataType : 'jsonp',
+                    success : dfd.resolve
+                });
+                return dfd.promise();
+            }
+            // $.searchTwitter('cats').then(function ( result ) {
+            //     console.log(result);
+            // });
+
+            var outer = $.searchTwitter('cats');
+            outer.then(function( result ){
+                console.log(result);
+            });
+            outer.then(function( result ){
+                console.log("Some data");
+            });
+
+
+        </script>
+    </body>
+</html>

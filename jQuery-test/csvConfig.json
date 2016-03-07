@@ -1,0 +1,15 @@
+{
+    "Indicator Name" :
+    [
+        "Arable land (% of land area)",
+        "Arable land (hectares per person)",
+        "Arable land (hectares)"
+    ],
+    "Country Name" : "India",
+    "yearStart" : "1960",
+    "yearEnd" : "2015",
+    "p2country" : "Africa",
+    "p2Filter" : "Arable land (% of land area)",
+    "p2FilterYear" : "2010",
+    "p3Filter"     : "Arable land (hectares)"
+}

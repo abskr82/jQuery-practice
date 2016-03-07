@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h2>click here</h2>
+        <h2>click here</h2>
+        <h2>click here</h2>
+        <h2>click here</h2>
+        <h2>click here</h2>
+        <article>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+
+        </article>
+
+
+    <script src="../include/lib/jquery-1.12.1.js">
+    </script>
+    <script>
+        $("h2").on('click',function(){
+            // alert("yeyeyy");
+            $(this).clone(true).appendTo('body');
+        });
+        $("article").append("Some append data");
+        $("article").prepend("Some prepend data");
+        $("article").after("Some after data");
+        $("article").before("Some before data");
+
+        $("<h2></h2>",{
+            text: "helloo there",
+            class: 'random'
+        }).appendTo('article');
+
+
+    </script>
+    </body>
+</html>
